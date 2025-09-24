@@ -1,6 +1,4 @@
 name: ci
-cat > .github/workflows/ci.yml <<'YAML'
-name: ci
 
 on:
   pull_request:
@@ -10,7 +8,6 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -22,3 +19,4 @@ jobs:
 
       - name: Print Go version
         run: go version
+
