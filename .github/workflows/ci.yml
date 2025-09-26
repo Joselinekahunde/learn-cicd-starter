@@ -2,13 +2,12 @@ name: ci
 
 on:
   push:
-    branches: ["**"]        # run on every push (helps the grader)
+    branches: ["**"]   # run on every push (helps the grader)
   pull_request:
     branches: [main]
 
 jobs:
   tests:
-    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -17,8 +16,8 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version-file: go.mod    # stays in sync with your module's Go version
+          go-version-file: go.mod   # stays in sync with your module's Go version
           cache: true
 
-     - name: Run unit tests with coverage
+      - name: Run unit tests with coverage
         run: go test -cover ./...
