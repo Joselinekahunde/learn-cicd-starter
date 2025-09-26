@@ -20,5 +20,5 @@ jobs:
           go-version-file: go.mod    # stays in sync with your module's Go version
           cache: true
 
-      - name: Run unit tests
-        run: go test ./...           # <-- replaces "go version"
+     - name: Run unit tests with coverage
+        run: go test -cover ./...
